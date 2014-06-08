@@ -17,13 +17,13 @@ sql <- "select * from file where Date in ('1/2/2007', '2/2/2007')"
 
 tab <- read.csv.sql(file, sql, header = T, sep = ";")
 
-table(tab$Sub_metering_1)
+#Open PNG graphics device 
+png(file = ".//data//plot4.png")
+
 #Create Plot 3
 plot(tab$DT, tab$Sub_metering_1, ylab = "Energy sub metering", xlab = "", type = "l")
 points(tab$DT, tab$Sub_metering_2, type = "l", col = "red")
 points(tab$DT, tab$Sub_metering_3, type = "l", col = "blue")
 legend("topright", legend = c("Sub_metering_1", "Sub_metering_1", "Sub_metering_1"), lty = 1, col = c("black", "red", "blue"))
 
-#Copy graph to PNG graphics device 
-dev.copy(png, file = ".//data//plot3.png") 
 dev.off()
