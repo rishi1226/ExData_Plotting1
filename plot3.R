@@ -18,7 +18,7 @@ sql <- "select * from file where Date in ('1/2/2007', '2/2/2007')"
 tab <- read.csv.sql(file, sql, header = T, sep = ";")
 
 #Open PNG graphics device 
-png(file = ".//data//plot4.png")
+png(file = ".//data//plot3.png")
 
 #Create Plot 3
 plot(tab$DT, tab$Sub_metering_1, ylab = "Energy sub metering", xlab = "", type = "l")
